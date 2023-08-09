@@ -1,0 +1,387 @@
+/* tanda * artinya akan melakukan pengaturan untuk semua tag */
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 20px;
+    font-size: 15px;
+}
+/* membuat backgorund di bagian html */
+html{
+    /* agar video dengan html nya ga ada jeda, tapi harus dibantu dengan css body*/
+    margin: 0;
+    padding: 0;
+    /* ganti biar dibag about us nya keganti */
+    /* background-color: #dedede; */
+    /* agar scroll nya lebih halus */
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+}
+
+/* membuat css untuk class layar dalam  */
+.layar-dalam{
+    width: 1000px;
+    margin: auto;
+}
+.layar-penuh{
+    /* akan memenuhi semua layar */
+    width: 100%;
+}
+/* membuat css untuk nav/navigasi */
+nav{
+    /* digunakan untuk posisi berada diatas */
+    z-index: 100;
+    /* default warnanya putih */
+    color: #fff;
+    text-align: center;
+    /* biar tetap dibagian atas */
+    position: fixed;
+    border-bottom: 1px solid #b1b1b1;
+    line-height: 60px;
+    /* lebarnya maksimal, biar selalu memenuhi semua layarnya */
+    width: 100%;
+    transition: background-color 0.5s ease;
+}
+nav.putih{
+    background-color: #fff;
+}
+/* disini diikuti dengan spasi, belum tau fungsinya */
+nav .logo{
+    /* agar logonya ada disebelah kiri */
+    /* digunakan untuk penempatan class nya aja */
+    float: left;
+    position: relative;
+    line-height: 55px;
+    text-align: center;
+}
+/* pengaturan untuk penempatan gambar logo nya */
+nav .logo img{
+    width: 120px;
+    /* agar logonya menuju ke tengah */
+    vertical-align:middle ;
+}
+nav .menu{
+    /* agar menu seperti home dll ada disebelah kanan */
+    float: right;
+    /* biar garis tinggi menu nya setinggi 60px */
+    height: 60px ;
+    /* biar ga memenuhi semua ruangan */
+    max-width: 600px;
+}
+nav .menu ul{
+    /* untuk menghilangkan bullet pada li */
+    list-style-type: none ;
+    margin: 0;
+    padding: 0;
+    /* agar menu seperti home dll horizontal ga vertikal kebawah */
+    display: flex;
+}
+nav .menu ul li{
+    /* sebenernya ini udh diatur di ul, tapi gpp */
+    list-style-type: none;
+    float: left;
+    /* agar menu ini agak kebawah, kira2 kebagian tengah atau tinggi dari atas kelas menu itu 60px */
+    line-height: 60px;
+}
+/* pengaturan untuk tag a */
+nav ul li a{
+    color: #fff;
+    text-align: center;
+    /* untuk jarak atas bawah kiri kanan */
+    padding: 0px 16px 0px 16px;
+    text-decoration: none;
+}
+/* ketika kursor ke salah satu menu, maka akan menampilkan hover sesuai pengaturan */
+nav ul li a:hover{
+    text-decoration: underline;
+}
+/* pengaturan header */
+header{
+    position: relative;
+    /* height yang kita tentukan 100% dari height induknya. */
+    height: 100vh;
+    /* agar memenuhi semua ruangan dari layar */
+    width: 100%;
+    /* agar scrolling gambar kiri kana atas bawah nya ilang(akan menghilangkan jika ada sisa */
+    overflow: hidden;
+    /* posisinya akan masih pada default nya */
+    z-index: 2;
+}
+header video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -2;
+}
+header .intro{
+    z-index: 100;
+    color: #fff;
+    /* agar text berada di tengah */
+    text-align: center;
+    /* dibuat relative dulu position nya, soalnya diawal dikasih absolute */
+    position: relative;
+    /* agar posisinya kebawah */
+    top: 50%;
+}
+header .intro h3{
+    font-size: 50px;
+    margin: 0;
+    }
+.tombol{
+    background-color: #c86b85;
+    text-decoration: none;
+    height: 40px;
+    line-height: 42px;
+    color: #fff;
+    /* sehingga untuk ukuran tingginya ada */
+    display: inline-block;
+    /* atas  kanan bawah kiri*/
+    padding: 0px 20px 0px 20px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+header .overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000 ;
+    opacity: 50%;
+    z-index: -1;
+}
+.tombol-menu{
+    position: absolute;
+    top: 1.7rem;
+    right: 1rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+}
+/* untuk garis tombol */
+.tombol-menu .garis{
+    height:3px ;
+    background-color: #fff;
+}
+section {
+    padding: 50px 0px 50px 0px;
+}
+section h3{
+    font-size: 30px;
+}
+/* merupakan pseudocode dari tag h3 */
+section h3::after{
+    content: "";
+    border-bottom: 5px solid #c86b85;
+    width: 52px;
+    display: block;
+    /* dari atas 20px */
+    margin: 20px auto;
+}
+/* untuk css id, pake # */
+#aboutus, 
+#team,
+#blog{
+    text-align: center;
+}
+section p.ringkasan{
+    font-style: italic;
+    font-size: 18px;
+    color: #ababab;
+}
+section .konten-isi p{
+    font-style: normal;
+}
+/* mengganti warna bg pada nav ketika di scroll */
+nav.putih{
+    background-color: #fff;
+}
+nav.putih .tombol-menu .garis{
+    background-color: #333;
+}
+nav .logo img.hitam{
+    display: none;
+}
+
+nav.putih ul li a{
+    color: #333;
+}
+/* gak pake spasi */
+section.abuabu{
+    background-color: #f5f6f6;
+}
+.support,
+.tim,
+.blog{
+    display: flex;
+    flex-direction: row;
+    /* agar menjadi mendatar */
+    justify-content: space-around;
+}
+.support h6,
+.tim h6{
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.support img{
+    /* gambarnya jadi sebesar 50px */
+    width: 50px;
+}
+.support div,
+.tim div{
+    text-align: center;
+    width: 26%;
+}
+section#gallery{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* ketika minimize maka tampilan yg seharusnya tampil akann dihilangkan */
+    overflow: hidden;
+    padding: 10px 0px 10px 0px;
+}
+section#gallery div{
+    padding: 10px;
+}
+section#gallery div img{
+    height: 100px;
+    border-radius: 5px;
+}
+section#gallery div img:hover{
+    transition: all 0.2s ease-in-out;
+    transform: scale(1.1);
+}
+section.quote{
+    background:url('asset/background-bromo.jpg') no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 100px;
+}
+section.quote .layar-dalam p{
+    display: inline;
+    background: url('asset/quote-icon.png') no-repeat;
+    padding:  40px;
+}
+.tim img{
+    width: 100%;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 5px;
+}
+.blog .area{
+    width: 47%;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.blog div.area div{
+    width: 50%;
+}
+.blog .area .gambar{
+    border-radius: 5px 0px 0px 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+}
+.blog .area .text article{
+    padding: 40px;
+}
+.blog .area .text article h4{
+    margin: 0px;
+}
+.blog .area .text article a{
+    color: #333;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+.blog .area .text article a:hover{
+    color: #ccc;
+}
+footer{
+    padding: 50px 0px 50px 0px;
+    background-color: #343a40;
+    color: #fff;
+}
+footer .layar-dalam{
+    display: flex;
+    /* biar membentuk kolom */
+    flex-direction: row;
+    justify-content: space-between;
+}
+footer .layar-dalam div{
+    /* biar ada jarak dengan info contact dll */
+    width: 20%;
+}
+footer .layar-dalam h5{
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+footer .layar-dalam .copyright{
+    width: 100%;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #666;
+    text-align: center;
+}
+
+/* pengaturan untuk lebar layar ketika di minimize */
+@media screen and (max-width: 991.98px) {
+    .layar-dalam{
+        /* ketika layar minimize kurang dari 991.98 px, maka layar dalam lebar nya 90% */
+        width: 90%;
+    }
+    nav .menu ul{
+        display: none;
+        /* pengaturan menu responsif */
+        margin-top: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    nav .menu ul li{
+        width: 100%;
+        border-bottom:1px solid #ccc;
+        background-color: #fff;
+        line-height: 40px;
+    }
+    nav .menu ul li a{
+        color: #333;
+    }
+    /* untuk menampilkan  garis tombol, karena sebelumnya ada display : none */
+    .tombol-menu{
+        display: flex;
+    }
+    .blog .area{
+        display: block;
+    }
+    .blog div.area div{
+        width: 100%;
+    }
+    .blog .area .gambar{
+        border-radius: 5px 5px 0px 0px;
+        height: 200px;
+    }
+    .support{
+        display: block;
+    }
+    .support div{
+        width: 100%;
+        padding-bottom: 30px;
+    }
+}
+
